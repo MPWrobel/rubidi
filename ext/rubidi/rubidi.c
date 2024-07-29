@@ -48,5 +48,5 @@ VALUE bidi(VALUE _self, VALUE str) {
 
 void Init_rubidi(void) {
   VALUE mod = rb_define_module("Rubidi");
-  rb_define_module_function(mod, "bidi", bidi, 1);
+  rb_define_module_function(mod, "bidi_inner", bidi, 1);
 }

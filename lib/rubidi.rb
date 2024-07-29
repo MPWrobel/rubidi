@@ -5,5 +5,8 @@ require_relative "rubidi/rubidi"
 
 module Rubidi
   class Error < StandardError; end
-  # Your code goes here...
+
+  def self.bidi(text)
+    text.split("\n").map { |line| Rubidi.bidi_inner(line) }.join("\n")
+  end
 end
