@@ -2,4 +2,5 @@
 
 require "mkmf"
 
+pkg_config("fribidi")
 create_makefile("rubidi/rubidi")
