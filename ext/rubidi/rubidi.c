@@ -3,19 +3,18 @@
 VALUE bidi(VALUE _self, VALUE str) {
   char *input, output[MAX_STR_LEN + 1];
   int len, len_utf8;
-  FriBidiParType base_dir;
   FriBidiChar input_utf8[MAX_STR_LEN], output_utf8[MAX_STR_LEN];
+  FriBidiParType base_dir;
 
   input = StringValueCStr(str);
   len = (int)strlen(input);
+  base_dir = FRIBIDI_PAR_RTL;
 
   if (len > MAX_STR_LEN) {
     fprintf(stderr, "Error: Input length exceeds the maximum (>%d)\n",
             MAX_STR_LEN);
     exit(1);
   }
-
-  base_dir = FRIBIDI_PAR_RTL;
 
   int charset = fribidi_parse_charset("UTF-8");
   if (!charset) {
