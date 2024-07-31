@@ -11,7 +11,6 @@ task build: :compile
 
 Rake::ExtensionTask.new("rubidi") do |ext|
   ext.lib_dir = "lib/rubidi"
-  ext.ext_dir = "lib/rubidi"
 end
 
 task default: %i[clobber compile spec]

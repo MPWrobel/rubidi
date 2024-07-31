@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
+require "rubidi/rubidi"
+
 require_relative "rubidi/version"
-require_relative "rubidi/rubidi"
 
 module Rubidi
   class Error < StandardError; end
